@@ -8,17 +8,18 @@ This CodeIgniter library allows you to quickly build out endpoints for custom sl
 Copy the contains of the respective folders to the proper places.
 
 For each custom slack command you create, add the slack provided token and add it to the config file.  
-  * The token is going to be the key that will allow your codeigniter app to know what service you want to provide.
-  * For example, if you create a service called "marco" and the slack token is 'asdf1234' your config file would like like the following.
+* The token is going to be the key that will allow your codeigniter app to know what service you want to provide.
+* For example, if you create a service called "marco" and the slack token is 'asdf1234' your config file would like like the following.
+
  ```
- 
  $config['tokens'] = array(
   'asdf1234' => 'marco'
  );
  ```
+
 Create a class in the Slack folder in the Library with the name "Slack_<service name>". For this example, the class would look like...
+
  ```
- 
  class Slack_marco extends Slack_bot
  {
     public function parse_data( $text = null ){  
@@ -30,9 +31,7 @@ Create a class in the Slack folder in the Library with the name "Slack_<service 
  
  ```
 
-
  If your service goes to get information from a single JSON based rest api, the library would provides a very basic abilty to declare url endpoint to get data.  It would look something like this...
-
 
  ```
  class Slack_marco extends Slack_bot
@@ -50,6 +49,7 @@ Create a class in the Slack folder in the Library with the name "Slack_<service 
  }
 
 ```
+
 Finally, you have to include your new class in the _Libraries/Slack_service.php_ file.
 
 You now should have a /slack service endpoint on your service that loads the slack library and performs the needed functionality.  
