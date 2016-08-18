@@ -28,10 +28,11 @@ abstract class Slack_bot
      */
     protected $response;
 
+
     /**
-     *
+     * @param null $text
      */
-    public function parse_data() {
+    public function parse_data( $text = null) {
 
         $this->get_data();
 
